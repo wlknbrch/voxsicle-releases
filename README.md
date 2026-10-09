@@ -14,7 +14,7 @@ Support for Intel Macs, Windows, and Linux is planned for a later release.
 
 ## Install Voxsicle
 
-1. Open the latest release and download the `Voxsicle-1.3.9-arm64.dmg` asset.
+1. Open the latest release and download the `Voxsicle-1.4.3-arm64.dmg` asset.
 2. Open the downloaded DMG.
 3. Drag **Voxsicle** to the **Applications** folder.
 4. Open the app from Applications.
@@ -89,12 +89,12 @@ Use only voices, recordings, and scripts that you have permission to process. Re
 
 | Asset | Purpose |
 | --- | --- |
-| `Voxsicle-1.3.9-arm64.dmg` | The desktop application installer for Apple Silicon Macs. |
+| `Voxsicle-1.4.3-arm64.dmg` | The desktop application installer for Apple Silicon Macs. |
 
 If a SHA-256 checksum file is attached to a release, verify the downloaded asset before opening it:
 
 ```bash
-shasum -a 256 "Voxsicle-1.3.9-arm64.dmg"
+shasum -a 256 "Voxsicle-1.4.3-arm64.dmg"
 ```
 
 ## Your local data
