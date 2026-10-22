@@ -14,7 +14,9 @@ Support for Intel Macs, Windows, and Linux is planned for a later release.
 
 ## Install Voxsicle
 
-1. Open the latest release and download the `Voxsicle-1.4.3-arm64.dmg` asset.
+**Latest release:** [v1.9.2](https://github.com/wlknbrch/voxsicle-releases/releases/tag/v1.9.2) · [Download Voxsicle-1.9.2-arm64.dmg](https://github.com/wlknbrch/voxsicle-releases/releases/download/v1.9.2/Voxsicle-1.9.2-arm64.dmg)
+
+1. Open the [latest release](https://github.com/wlknbrch/voxsicle-releases/releases/latest) and download the `Voxsicle-1.9.2-arm64.dmg` asset.
 2. Open the downloaded DMG.
 3. Drag **Voxsicle** to the **Applications** folder.
 4. Open the app from Applications.
@@ -27,7 +29,7 @@ These releases are currently **not notarized by Apple and do not have a Develope
 
 #### 1. Try the macOS approval option first
 
-1. Download the DMG only from [this repository's official releases](https://github.com/slinkysloperatjohn-source/voxsicle-releases/releases). If a checksum is provided, verify it as described below.
+1. Download the DMG only from [this repository's official releases](https://github.com/wlknbrch/voxsicle-releases/releases). If a checksum is provided, verify it as described below.
 2. Copy **Voxsicle.app** to **Applications** and eject the DMG. Work with the installed copy, not the app inside the disk image.
 3. Try opening the installed app once. Dismiss the warning without moving the app to Trash.
 4. Open **System Settings → Privacy & Security**, scroll to **Security**, and select **Open Anyway** for Voxsicle, if available. In German macOS this is **Systemeinstellungen → Datenschutz & Sicherheit → Dennoch öffnen**.
@@ -64,7 +66,7 @@ This removes the download quarantine attribute **only from this app bundle**, re
 - **Different installation location:** Change the `APP="..."` line to the actual path of the installed `.app`. Keep the quotation marks, especially if the path contains spaces.
 - **Permission denied / Operation not permitted:** Make sure the app is closed and you are modifying the copy in Applications, not the read-only DMG. If the copy belongs to an administrator, an administrator can run the same `xattr` and `codesign --force ...` commands with `sudo` before each command, using the same quoted app path. Terminal does not display characters while an administrator password is entered.
 - **Developer tools requested:** If macOS requests Command Line Tools when running `codesign`, install the free tools with `xcode-select --install`, finish the installation, and rerun the block. A paid developer membership is not required.
-- **Signing or verification fails:** Stop and retain the exact Terminal error. Download a fresh copy from the official release and try again. If it still fails, [open an issue](https://github.com/slinkysloperatjohn-source/voxsicle-releases/issues) with your macOS version, app version, and error. Recursive `--deep` signing is a local repair fallback; some bundled components may require a corrected release. A valid local signature does not guarantee that every runtime component will start.
+- **Signing or verification fails:** Stop and retain the exact Terminal error. Download a fresh copy from the official release and try again. If it still fails, [open an issue](https://github.com/wlknbrch/voxsicle-releases/issues) with your macOS version, app version, and error. Recursive `--deep` signing is a local repair fallback; some bundled components may require a corrected release. A valid local signature does not guarantee that every runtime component will start.
 - **After an update or reinstall:** The replacement app may need these steps again. They affect the installed app bundle, not your projects, models, or files in Application Support.
 
 See [Apple's instructions for opening an unnotarized app](https://support.apple.com/en-us/102445).
@@ -89,13 +91,21 @@ Use only voices, recordings, and scripts that you have permission to process. Re
 
 | Asset | Purpose |
 | --- | --- |
-| `Voxsicle-1.4.3-arm64.dmg` | The desktop application installer for Apple Silicon Macs. |
+| `Voxsicle-1.9.2-arm64.dmg` | The desktop application installer for Apple Silicon Macs. |
 
-If a SHA-256 checksum file is attached to a release, verify the downloaded asset before opening it:
+GitHub provides the following SHA-256 checksum for the current `Voxsicle-1.9.2-arm64.dmg` release asset:
+
+```text
+f4151ca945090cc05eafe2f597e0dbfb199952700dd5a628c9c9d984b72a2461
+```
+
+To verify your downloaded DMG, open Terminal in the folder containing the file and run:
 
 ```bash
-shasum -a 256 "Voxsicle-1.4.3-arm64.dmg"
+echo 'f4151ca945090cc05eafe2f597e0dbfb199952700dd5a628c9c9d984b72a2461  Voxsicle-1.9.2-arm64.dmg' | shasum -a 256 -c -
 ```
+
+Only proceed if the result says `OK`. A checksum confirms that the downloaded file matches the published asset; it does not establish the identity of the publisher or replace Apple's notarization checks.
 
 ## Your local data
 
@@ -109,4 +119,4 @@ That location can contain Voice Profiles, reference audio, generated takes, expo
 
 ## Experimental release notice
 
-Voxsicle is free to use and still evolving. Keep backups of important recordings and exports, and expect first-release limitations while the product and platform support continue to develop.
+Voxsicle is free to use and still evolving. Keep backups of important recordings and exports, and expect experimental limitations while the product and platform support continue to develop.
